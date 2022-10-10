@@ -9,7 +9,7 @@ import (
 )
 
 func GetKatoo(c *gin.Context) {
-	katoo := models.Katoo{}
+	katoo := []models.Katoo{}
 	result := config.DB.Find(&katoo)
 	if result.Error != nil {
 		c.IndentedJSON(http.StatusInternalServerError,
