@@ -1,6 +1,28 @@
 import React from 'react'
+import { useState } from "react"
+import axios from 'axios'
+
 
 function PostData() {
+
+    const [, setPost] = useState([]);
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+
+    const apiURL = "http://localhost:8080/katoo"
+
+    function createPost() {
+        axios.post(apiURL, {
+            title: title,
+            body: body
+        })
+            .then((response) => {
+                setPost(response.data);
+            })
+        alert("สร้างโพสต์เรียบร้อย")
+        window.location.reload();
+    }
+
     return (
         <div>
             <div className='flex justify-center'>
@@ -13,13 +35,13 @@ function PostData() {
                         <form className="my-4">
                             <div class="mb-6 ">
                                 <label for="name" class="block mb-2 text-sm font-medium text-white">1.ระบุคำถามของคุณ หรือหัวข้อของคุณ</label>
-                                <input type="text" id="title" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
+                                <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" id="title" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
                                 <label for="detail" class="block mb-2 text-sm font-medium text-white mt-5 ">2.กรอกรายละเอียดของคำถาม หรือหัวข้อของคุณ</label>
-                                <textarea type="text" id="detail" class="h-[250px] w-[720px] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
+                                <textarea value={body} onChange={(e) => setBody(e.target.value)} type="text" id="detail" class="h-[250px] w-[720px] shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="" required />
                             </div>
 
                             <div className='flex justify-center'>
-                                <button class="bg-white hover:bg-sky-400 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded">
+                                <button onClick={createPost} class="bg-white hover:bg-sky-400 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded">
                                     โพสต์
                                 </button>
                             </div>
