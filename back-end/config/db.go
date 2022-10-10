@@ -18,6 +18,6 @@ func Connect() {
 		panic(err)
 	}
 
-	db.AutoMigrate(&models.User{})
+	db.AutoMigrate(&models.User{}, &models.Katoo{})
 	DB = db
 }
