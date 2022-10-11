@@ -33,11 +33,11 @@ func CreateKatoo(c *gin.Context) {
 
 func DeleteKatooByID(c *gin.Context) {
 	id := c.Param("id")
-	idea_post := []models.Katoo{}
-	if result := config.DB.Where("id = ?", id).Delete(&idea_post); result.Error != nil {
+	katoo := []models.Katoo{}
+	if result := config.DB.Where("id = ?", id).Delete(&katoo); result.Error != nil {
 		c.IndentedJSON(http.StatusInternalServerError,
 			gin.H{"Error": result.Error.Error()})
 		return
 	}
-	c.IndentedJSON(http.StatusNoContent, &idea_post)
+	c.IndentedJSON(http.StatusNoContent, &katoo)
 }
