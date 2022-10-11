@@ -5,7 +5,6 @@ import PostData from '../components/PostData'
 function PostDataPage() {
     return (
         <div>
-            <Menu />
             <PostData />
         </div>
     )

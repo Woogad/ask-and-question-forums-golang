@@ -98,10 +98,29 @@ func Login(c *gin.Context) {
 		"token": tokenString,
 	})
 }
-func Vaildate(c *gin.Context) {
+
+func Logout(c *gin.Context) {
+	c.SetSameSite(http.SameSiteLaxMode)
+	c.SetCookie("Authorization", "", -1000, "", "", false, true)
+	c.JSON(http.StatusOK, gin.H{
+		"message": "logout",
+	})
+}
+
+func User(c *gin.Context) {
 	user, _ := c.Get("user")
 
-	c.JSON(http.StatusOK, gin.H{
-		"Data in user ": user,
-	})
+	// c.IndentedJSON(http.StatusOK, &idea_posts)
+	c.JSON(http.StatusOK, user)
+}
+
+func DeleteUserByID(c *gin.Context) {
+	id := c.Param("id")
+	user := []models.User{}
+	if result := config.DB.Where("id = ?", id).Delete(&user); result.Error != nil {
+		c.IndentedJSON(http.StatusInternalServerError,
+			gin.H{"Error": result.Error.Error()})
+		return
+	}
+	c.IndentedJSON(http.StatusNoContent, &user)
 }

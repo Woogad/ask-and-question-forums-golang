@@ -9,7 +9,9 @@ import (
 
 func User(router *gin.Engine) {
 	router.GET("/users", controller.GetUser)
-	router.POST("/create-user", controller.CreateUser)
+	router.GET("/user", middleware.RequireAuth, controller.User)
+	router.POST("/register", controller.CreateUser)
 	router.POST("/login", controller.Login)
-	router.GET("/vaildate", middleware.RequireAuth, controller.Vaildate)
+	router.POST("/logout", controller.Logout)
+	router.DELETE("/users/:id", controller.DeleteUserByID)
 }

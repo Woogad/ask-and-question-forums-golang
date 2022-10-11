@@ -1,6 +1,4 @@
-import React from 'react'
 import { FcSearch } from "react-icons/fc";
-
 function Home() {
     return (
         <div>

@@ -4,7 +4,6 @@ import Menu from "../components/Menu";
 function LoginPage() {
     return (
         <div>
-            <Menu />
             <Login />
         </div>
     );

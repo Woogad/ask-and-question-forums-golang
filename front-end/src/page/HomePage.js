@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Menu from '../components/Menu'
 import Home from '../components/Home'
 import ApiKatooPost from '../components/ApiKatooPost'
-
-function HomePage() {
+function HomePage({ name }) {
     return (
         <div>
-            <Menu />
+            <div className="mr-6 mt-10 flex justify-center">
+                {name ? ("hello " + name) : ""}
+            </div>
             <Home />
             <ApiKatooPost />
         </div>
