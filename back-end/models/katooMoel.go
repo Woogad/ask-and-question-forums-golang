@@ -7,5 +7,5 @@ type Katoo struct {
 	Title string `json:"title"`
 	Body  string `json:"body"`
 	Vote  int64  `json:"vote"`
-	User  User
+	// User  User
 }
