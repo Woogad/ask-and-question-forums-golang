@@ -52,11 +52,9 @@ function Menu({ name }) {
                     </Link>
                 </div>
                 <div className='flex justify-end text-center'>
-                    <div>
-                        <Link to='/Post'>
-                            <p href='/' className='font-semibold hover:text-blue-900'>สร้างกระทู้</p>
-                        </Link>
-                    </div>
+                    <Link to='/Post'>
+                        <p href='/' className='font-semibold hover:text-blue-900'>สร้างกระทู้</p>
+                    </Link>
                     {menu}
                 </div>
             </div>
