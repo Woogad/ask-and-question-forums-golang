@@ -11,3 +11,14 @@ export const RequAuth = ({ children }) => {
         return children
     }
 }
+
+export const NoAuth = ({ children }) => {
+    const name = useContext(AuthContext)
+    if (name) {
+        return <Navigate to='/' />
+    }
+    else {
+
+        return children
+    }
+}

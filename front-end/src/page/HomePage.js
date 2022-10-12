@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import Home from '../components/Home'
 import ApiKatooPost from '../components/ApiKatooPost'
 import AuthContext from '../components/Data/AuthContext'
-import { Link } from 'react-router-dom'
 function HomePage() {
     const name = useContext(AuthContext)
     return (

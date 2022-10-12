@@ -32,20 +32,20 @@ function Register() {
 
                 <div>
                     <form className="my-4" onSubmit={submit}>
-                        <div class="mb-6 ">
-                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900">ชื่อผู้ใช้</label>
+                        <div className="mb-6 ">
+                            <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900">ชื่อผู้ใช้</label>
                             <input type="text" id="name" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                                 onChange={e => setName(e.target.value)} placeholder="name" required />
-                            <label for="Email" class="block mb-2 text-sm font-medium text-gray-900 ">อีเมล</label>
-                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                            <label htmlFor="Email" className="block mb-2 text-sm font-medium text-gray-900 ">อีเมล</label>
+                            <input type="email" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                                 onChange={e => setEmail(e.target.value)} placeholder="email" required />
-                            <label for="Password" class="block mb-2 text-sm font-medium text-gray-900 0">รหัสผ่าน</label>
-                            <input type="password" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                            <label htmlFor="Password" className="block mb-2 text-sm font-medium text-gray-900 0">รหัสผ่าน</label>
+                            <input type="password" id="password" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                                 onChange={e => setPassword(e.target.value)} placeholder="password" required />
                         </div>
 
                         <div className='flex justify-center'>
-                            <input type="submit" class="bg-transparent hover:bg-sky-400 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded" value={"ยืนยัน"} />
+                            <input type="submit" className="bg-transparent hover:bg-sky-400 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded" value={"ยืนยัน"} />
                         </div>
                     </form>
 

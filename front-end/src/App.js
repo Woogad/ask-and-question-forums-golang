@@ -6,7 +6,7 @@ import RegisterPage from "./page/RegisterPage";
 import NotFoundPage from "./page/NotFoundPage";
 import Menu from "./components/Menu";
 import { AuthProvider } from "./components/Data/AuthContext";
-import { RequAuth } from "./components/RequAuth";
+import { RequAuth, NoAuth } from "./components/RequAuth";
 import PostKatooDetail from "./components/PostKatooDetail";
 function App() {
   return (
@@ -14,12 +14,16 @@ function App() {
       <Menu />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="login" element={<Login />}></Route>
+        <Route path="login" element={<NoAuth>
+          <Login />
+        </NoAuth>}>
+        </Route>
         <Route path="register" element={<RegisterPage />}></Route>
         <Route path="post" element={<RequAuth>
           <PostDataPage />
         </RequAuth>}>
         </Route>
+        {/* <Route path="post" element={<PostDataPage />}> </Route> */}
         <Route path="katoo/:katooID" element={<PostKatooDetail />}> </Route>
         <Route path="*" element={<NotFoundPage />}></Route>
       </Routes>

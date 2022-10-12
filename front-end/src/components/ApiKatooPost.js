@@ -19,7 +19,7 @@ function ApiKatooPost() {
       <div className="">
         {post.map(e => {
           return (
-            <Link to={`/katoo/${e.ID}`}>
+            <Link to={`/katoo/${e.ID}`} key={e.ID}>
               <PostKatooData ID={e.ID} title={e.title} body={e.body} />
             </Link>
           )
