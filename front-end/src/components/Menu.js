@@ -1,18 +1,22 @@
 import axios from 'axios';
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-function Menu({ name }) {
+import React, { useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import AuthContext from './Data/AuthContext';
+function Menu() {
+    const name = useContext(AuthContext)
     let menu = null;
     const apiUrl = "http://localhost:8080/logout"
+    const navigate = useNavigate()
 
     const logout = () => {
         axios.post(`${apiUrl}`, {}, { withCredentials: true })
             .then(() => {
+                navigate("/")
                 window.location.reload();
+                console.log(name)
             })
             .catch((res) => {
-                console.log(res)
+                console.log("fail to logout")
             })
     }
 

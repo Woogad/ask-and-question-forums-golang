@@ -1,7 +1,7 @@
 import React from 'react'
 
 function PostKatooData(props) {
-    const { ID, title, body } = props
+    const { ID, title } = props
 
     return (
         <div>

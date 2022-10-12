@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
-import Menu from '../components/Menu'
 import Home from '../components/Home'
 import ApiKatooPost from '../components/ApiKatooPost'
-function HomePage({ name }) {
+import AuthContext from '../components/Data/AuthContext'
+import { Link } from 'react-router-dom'
+function HomePage() {
+    const name = useContext(AuthContext)
     return (
         <div>
             <div className="mr-6 mt-10 flex justify-center">
@@ -13,5 +15,4 @@ function HomePage({ name }) {
         </div>
     )
 }
-
 export default HomePage

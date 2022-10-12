@@ -1,11 +1,10 @@
 import React from 'react'
-import Menu from '../components/Menu'
-import PostData from '../components/PostData'
+import PostKatoo from '../components/PostKatoo'
 
 function PostDataPage() {
     return (
         <div>
-            <PostData />
+            <PostKatoo />
         </div>
     )
 }
