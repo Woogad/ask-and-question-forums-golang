@@ -15,7 +15,8 @@ export const RequAuth = ({ children }) => {
 export const NoAuth = ({ children }) => {
     const name = useContext(AuthContext)
     if (name) {
-        return <Navigate to='/' />
+        return <Navigate to="/" />
+
     }
     else {
 

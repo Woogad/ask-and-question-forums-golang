@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from "react"
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import axios from "axios"
 import PostKatooData from './PostKatooData';
 
@@ -15,17 +15,15 @@ function ApiKatooPost() {
     });
   }, []);
   return (
-    <div>
-      <div className="">
-        {post.map(e => {
-          return (
-            <Link to={`/katoo/${e.ID}`} key={e.ID}>
-              <PostKatooData ID={e.ID} title={e.title} body={e.body} />
-            </Link>
-          )
-        })}
-      </div>
-    </div>
+    <>
+      {post.map(e => {
+        return (
+          <Link to={`/katoo/${e.ID}`} key={e.ID} >
+            <PostKatooData ID={e.ID} title={e.title} body={e.body} />
+          </Link>
+        )
+      })}
+    </>
   )
 }
 

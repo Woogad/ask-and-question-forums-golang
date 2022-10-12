@@ -15,7 +15,7 @@ function Login() {
             password: password
         }, { withCredentials: true }).then(res => {
             alert("login successfully")
-            navigate("/")
+            navigate("/", { replace: true })
             window.location.reload();
         }).catch(res => {
             alert("fail to login")

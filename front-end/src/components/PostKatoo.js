@@ -8,25 +8,33 @@ function PostData() {
 
     const [, setPost] = useState([]);
     const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
+    const [body, setBody] = useState('')
     const navigate = useNavigate()
     const apiURL = "http://localhost:8080/katoo"
 
-    function createPost() {
-        axios.post(apiURL, {
-            title: title,
-            body: body
-        }, {
-            withCredentials: true
-        })
-            .then((response) => {
-                setPost(response.data);
-                alert("สร้างโพสต์เรียบร้อย")
+    function createPost(e) {
+        e.preventDefault()
+        if (body.length && title.length >= 1) {
+            axios.post(apiURL, {
+                title: title,
+                body: body
+            }, {
+                withCredentials: true
             })
-            .catch(res => {
-                console.log(res)
-                alert("fail to create katoo")
-            })
+                .then((response) => {
+                    setPost(response.data);
+                    alert("สร้างกระทู้เรียบร้อย")
+                    navigate("/")
+                })
+                .catch(res => {
+                    console.log(res)
+                    alert("fail to create katoo")
+                })
+
+        }
+        else {
+            alert("กรุณาใส่ข้อความให้ครบ")
+        }
     }
 
     return (

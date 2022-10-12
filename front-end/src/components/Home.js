@@ -1,5 +1,6 @@
 import { FcSearch } from "react-icons/fc";
 function Home() {
+
     return (
         <div>
             <div className="mr-6 mt-10 flex justify-center">
