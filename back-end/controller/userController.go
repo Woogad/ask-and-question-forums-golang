@@ -111,7 +111,7 @@ func User(c *gin.Context) {
 	user, _ := c.Get("user")
 
 	// c.IndentedJSON(http.StatusOK, &idea_posts)
-	c.JSON(http.StatusOK, user)
+	c.JSON(http.StatusOK, user.(models.User))
 }
 
 func DeleteUserByID(c *gin.Context) {
