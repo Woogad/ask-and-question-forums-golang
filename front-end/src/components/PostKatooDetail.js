@@ -25,13 +25,13 @@ const PostKatooDetail = () => {
                 <div class="mt-20 bg-amber-600 p-10 rounded-2xl shadow-lg">
                     <div class="text-white">
                         <p class="">ไอดี:{katoo.ID} </p>
-                        <p class="text-5xl flex justify-center">หัวข้อเรื่อง:{katoo.title} </p>
+                        <p class="text-5xl flex justify-center leading-snug">หัวข้อเรื่อง: {katoo.title} </p>
                     </div>
                 </div>
 
                 <div class="mt-5 bg-amber-600 p-10 rounded-2xl">
                     <div class="text-white">
-                        <p class='text-2xl font-thin'>{katoo.body} </p>
+                        <p class='text-2xl font-thin '>{katoo.body} </p>
                         <p class="mt-20 text-lg">ผู้สร้าง:{katoo.username} </p>
                     </div>
                 </div>
