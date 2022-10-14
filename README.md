@@ -2,11 +2,11 @@
 
 ## วิธี run\
 
-#### back-end\
+#### back-end
 1`cd back-end`\
-2`go run main.go`\
+2`go run main.go`
 
-#### font-end\
+#### font-end
 1.`cd front-end`\
 2.`npm install`\
 3`npm start`\
