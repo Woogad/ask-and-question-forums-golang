@@ -1,4 +1,3 @@
-import Menu from "../components/Menu";
 import Register from "../components/Register";
 
 function RegisterPage() {

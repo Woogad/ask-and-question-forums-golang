@@ -15,12 +15,13 @@ function Login() {
             password: password
         }, { withCredentials: true }).then(res => {
             alert("login successfully")
-            navigate("/")
+            navigate("/", { replace: true })
             window.location.reload();
         }).catch(res => {
             alert("fail to login")
         })
     }
+
 
     return (
         <div className='flex justify-center'>
@@ -31,23 +32,23 @@ function Login() {
 
                 <div>
                     <form onSubmit={submit}>
-                        <div class="mt-6 ">
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 ">อีเมล</label>
-                            <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                        <div className="mt-6 ">
+                            <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">อีเมล</label>
+                            <input type="email" id="email" className="shadow-sm bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                                 onChange={(e) => setEmail(e.target.value)} placeholder="email" required />
-                            <label for="Password" class="block mb-2 text-sm font-medium text-gray-900 mt-2 ">รหัสผ่าน</label>
-                            <input type="password" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                            <label htmlFor="Password" className="block mb-2 text-sm font-medium text-gray-900 mt-2 ">รหัสผ่าน</label>
+                            <input type="password" id="password" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
                                 onChange={(e) => setPassword(e.target.value)} placeholder="password" required />
 
                             <div className="flex justify-end mt-2">
                                 <Link to='/Register'>
-                                    <p class="underline ... hover:text-blue-500">สมัครสมาชิก</p>
+                                    <p className="underline ... hover:text-blue-500">สมัครสมาชิก</p>
                                 </Link>
                             </div>
 
                         </div>
                         <div className='flex justify-center'>
-                            <input type="submit" value={"ยืนยัน"} class="bg-transparent hover:bg-sky-400 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded" />
+                            <input type="submit" value={"ยืนยัน"} className="bg-transparent hover:bg-sky-400 text-amber-500 font-semibold hover:text-white py-2 px-4 border border-amber-500 hover:border-transparent rounded" />
                         </div>
                     </form>
                 </div>
